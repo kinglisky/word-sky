@@ -30,7 +30,8 @@
         </div>
       </div>
       <div class="right">
-        <div class="item" <label v-bind:style="{ color: danmakuSet.color }">弹幕颜色：</label>
+        <div class="item">
+          <label v-bind:style="{ color: danmakuSet.color }">弹幕颜色：</label>
           <input type="text" v-bind:style="{ color: danmakuSet.color }" v-model="danmakuSet.color" placeholder="12 -- 64">
         </div>
         <div class="color-wrapper">
@@ -148,7 +149,7 @@ export default {
   align-content: center;
   justify-content: center;
   .item {
-    margin:2% auto;
+    margin: 2% auto;
     box-sizing: border-box;
     padding: 2%;
     width: 80%;
