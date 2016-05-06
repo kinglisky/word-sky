@@ -2,7 +2,7 @@
   <div class="login-wrapper">
     <bg></bg>
     <div class="input-wrapper">
-      <input type="text" placeholder="请输入您的昵称" v-model="userName" @keyup.enter="setUserName">
+      <input type="text" placeholder="请输入您的昵称" v-model="uname" @keyup.enter="setUserName">
       <button @click="setUserName">JOIN IN</button>
     </div>
   </div>
@@ -10,6 +10,7 @@
 <script>
 import bg from './bg';
 import Router from '../route';
+import MsgManage from '../msg-manage';
 export default {
   components: {
     bg
@@ -17,23 +18,14 @@ export default {
 
   data() {
     return {
-      userName: null
+      uname: null
     };
   },
 
   methods: {
     setUserName() {
-      if (this.userName) {
-        this.SKY.emit('login', {
-          userName: this.userName
-        });
-        this.SKY.on('commitLogin', (data) => {
-          console.log('login ok', data);
-          Router.go({
-            path: '/main'
-          });
-        });
-      }
+      if (!this.uname) return;
+      MsgManage.login(this.uname);
     }
   }
 }
@@ -59,15 +51,15 @@ export default {
     height: 100%;
     box-sizing: border-box;
     border: 1px solid #fff;
-    color: #fff;
+    color: #0ff;
     background-color: transparent;
   }
   > input {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     flex: 0 0 80%;
     border-right: none;
-    color: #fff;
+    color: #000;
     border-radius: 8px 0 0 8px;
   }
   > button {

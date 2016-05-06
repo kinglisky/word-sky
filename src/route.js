@@ -8,8 +8,8 @@ import NotFound from './components/not-found';
 Vue.use(VueRouter);
 
 var router = new VueRouter({
-  hashbang: false,
-  history: true
+  hashbang: true,
+  history: false
 });
 const routerMap = {
   '/': {

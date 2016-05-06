@@ -1,6 +1,6 @@
 <template>
   <section class="input-panel-wrapper">
-    <function-panel solt="body"></function-panel>
+    <function-panel></function-panel>
     <inputer></inputer>
   </section>
 </template>

@@ -1,9 +1,37 @@
 <template>
   <div class="base-panel-wrapper">
-    <div class="msg-list"></div>
+    <div class="msg-list" v-el:msglist>
+      <msg v-if="msgs.length" v-for="msg in msgs" :msg="msg" track-by="$index">
+      </msg>
+    </div>
   </div>
 </template>
 <script>
+import Msg from './msg';
+import {
+  msgs
+} from '../vuex/getters';
+export default {
+  components: {
+    Msg
+  },
+
+  watch: {
+    msgs() {
+      this.$nextTick(() => {
+        var list = this.$els.msglist;
+        list.scrollTop = list.scrollHeight;
+      });
+    }
+  },
+
+  vuex: {
+    getters: {
+      msgs
+    }
+  }
+}
+</script>
 </script>
 <style lang="less" scoped>
 .base-panel-wrapper {
@@ -18,18 +46,9 @@
   border-radius: 8px;
   height: 100%;
   position: relative;
-  &:after {
-    @bwidth: 40px;
-    content: '';
-    position: absolute;
-    bottom: -@bwidth;
-    left: 50%;
-    margin-left: -@bwidth /2;
-    border: @bwidth/2 solid transparent;
-    border-top: @bwidth/2 solid #fff;
-    border-left-width: none;
-    border-right-width: none;
-    border-bottom-width: none;
-  }
+  padding: 4%;
+  box-sizing: border-box;
+  overflow: auto;
+  transition: all 0.5s;
 }
 </style>

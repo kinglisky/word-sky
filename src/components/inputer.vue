@@ -1,14 +1,44 @@
 <template>
   <div class="inputer-wrapper">
-    <input type="text" placeholder="无聊的人类啊不来一发吗？">
-    <button>SEND</button>
+    <input v-el:input type="text" placeholder="无聊的人类啊不来一发吗？" v-model="msg" @keyup.enter="sendMsg">
+    <button @click="sendMsg">SEND</button>
   </div>
 </template>
 <script>
+import * as Getters from '../vuex/getters';
+import MsgManage from '../msg-manage';
 export default {
-  data() {
-    return {};
+  methods: {
+    sendMsg() {
+      if (!this.msg) return;
+      var inputData = {
+        uname: this.uname,
+        uid: this.id,
+        content: this.msg
+      };
+
+      var danmakuData = Object.assign({
+        text: inputData.uname + '： ' + inputData.content
+      }, this.danmaku);
+
+      this.msg = '';
+      MsgManage.msg(inputData, danmakuData);
+    }
   },
+
+  data() {
+    return {
+      msg: ''
+    }
+  },
+  vuex: {
+    getters: {
+      currId: Getters.currId,
+      uname: Getters.uname,
+      uid: Getters.uid,
+      danmaku: Getters.danmaku
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

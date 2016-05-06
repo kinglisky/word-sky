@@ -15,7 +15,7 @@ import InputPanel from './input-panel';
 import UserPanel from './user-panel';
 import BasePanel from './base-panel';
 import MsgPanel from './msg-panel';
-
+import * as Getters from '../vuex/getters';
 export default {
   components: {
     InputPanel,
@@ -27,6 +27,20 @@ export default {
   data() {
     return {};
   },
+
+  created() {
+    if (!this.uid) {
+      this.$route.router.go('/');
+    }
+  },
+  vuex: {
+    getters: {
+      uname: Getters.uname,
+      uid: Getters.uid
+    }
+  }
+
+
 }
 </script>
 <style lang="less" scoped>
@@ -55,6 +69,7 @@ export default {
     box-sizing: border-box;
   }
 }
+
 .base-panel {
   width: 20%;
 }
