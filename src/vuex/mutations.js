@@ -51,7 +51,7 @@ export default {
   },
 
   REMOVE_IMGS(state,data) {
-    if (state.imgs.length && state.imgs.length > 9) {
+    if (state.imgs.length && state.imgs.length > 6) {
       state.imgs.shift();
     }
   }

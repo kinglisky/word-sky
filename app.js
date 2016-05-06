@@ -3,7 +3,9 @@ var app = koa();
 var serve = require('koa-static');
 
 // 指向静态文件文件夹
-// app.use(serve('./dist'));
+if (process.env.NODE_ENV === 'production') {
+  app.use(serve('./dist'));
+}
 
 // 必须放在在所有app.user()之后
 var server = require('http').Server(app.callback());

@@ -7,6 +7,7 @@
 <script>
 import * as Getters from '../vuex/getters';
 import MsgManage from '../msg-manage';
+const FACE = ['(￣.￣)', '\(￣< ￣)>', '(～o￣▽￣)～o', '~。。。(~￣▽￣)~[]', '╮(╯3╰)╭', '╮(╯_╰)╭', '(= 0 =)y', 'o(︶︿︶)o', '=￣ω￣=', '(￣３￣)a', '￣▽￣', '╮(╯3╰)╭', '(￣▽￣)~*', '(￣▽￣)"', '╮(╯▽╰)╭ ', '╮(￣▽￣)╭', 'o(≧v≦)o', '┴┴~\(≧▽≦)/~┴┴', '≧□≦○', '≧▽≦y', '(/≧▽≦/)', '(≧▽≦)y', '(/≧▽≦)/~┴┴', '(≧▽≦)(@)', '\(≧3≦)/', '\(≧ω≦)/', 'o(≧ω≦)o', 'o(≧o≦)o', 'ˋ( ° ▽、° )', ];
 export default {
   methods: {
     sendMsg() {
@@ -18,7 +19,7 @@ export default {
       };
 
       var danmakuData = Object.assign({
-        text: inputData.uname + '： ' + inputData.content
+        text: FACE[(Math.random() * FACE.length) | 0] + ' ' + inputData.uname + '|-> ' + inputData.content
       }, this.danmaku);
 
       this.msg = '';

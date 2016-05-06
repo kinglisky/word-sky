@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
+  font-family: "proxima-nova", "Gotham", Helvetica, "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", "YouYuan", "幼圆", serif;
 }
 
 .view {

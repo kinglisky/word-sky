@@ -99,9 +99,13 @@ export default {
   width: 90%;
   height: 90%;
   overflow-y: auto;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 8px;
   > img {
     display: block;
     width: 100%;
+    margin: auto;
   }
   > div {
     position: absolute;
@@ -110,9 +114,9 @@ export default {
     padding: 1%;
     cursor: pointer;
     transition: all 0.5s;
-    color: #0ff;
+    color: #f00;
     &:hover {
-      color: #f00;
+      color: #0ff;
     }
   }
 }

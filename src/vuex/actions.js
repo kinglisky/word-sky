@@ -41,7 +41,7 @@ export const removeImgs = ({ dispatch, state }, data) => {
     dispatch('REMOVE_IMGS');
     setTimeout(() => {
       todo();
-    }, 3000);
+    }, 1000);
   };
   todo();
 };

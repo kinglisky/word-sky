@@ -27,6 +27,11 @@ export default {
 <style lang="less" scoped>
 .module-wrapper {
   position: absolute;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom: none;
+  box-sizing: border-box;
+  background: #000;
   bottom: 80px;
   left: 0;
   width: 100%;

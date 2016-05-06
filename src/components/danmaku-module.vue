@@ -15,14 +15,14 @@
           <label>字体大小：</label>
           <input type="text" v-model="danmakuSet.size" placeholder="12 -- 64">
         </div>
-        <div class="item" v-if="+danmakuSet.mode === 4 || +danmakuSet.mode === 5">
+        <!-- <div class="item" v-if="+danmakuSet.mode === 4 || +danmakuSet.mode === 5">
           <label>初始透明度：</label>
           <input type="text" v-model="danmakuSet.alphaFrom" placeholder="0 -- 1">
         </div>
         <div class="item" v-if="+danmakuSet.mode === 4 || +danmakuSet.mode === 5">
           <label>终止透明度：</label>
           <input type="text" v-model="danmakuSet.alphaTo" placeholder="0 -- 1">
-        </div>
+        </div> -->
         <div class="item">
           <label>显示边框：</label>
           <input type="checkbox" id="checkbox" v-model="danmakuSet.border">
@@ -67,8 +67,6 @@ export default {
         mode: '1',
         size: 16,
         border: false,
-        alphaFrom: 1,
-        alphaTo: 1,
         color: '#fff'
       },
       modeType: MODE_TYPE,
@@ -95,8 +93,6 @@ export default {
           var danmakuData = {
             mode: +danmaku.mode,
             size: +danmaku.size,
-            alphaFrom: +danmaku.alphaFrom,
-            alphaTo: +danmaku.alphaTo,
             color: this.toNumHex(danmaku.color)
           };
           this.setDanmaku(danmakuData);
@@ -166,9 +162,7 @@ export default {
       margin: 10px;
     }
   }
-  .item:nth-child(2),
-  .item:nth-child(3),
-  .item:nth-child(4) {
+  .item:nth-child(2) {
     padding: 0;
     padding-left: 2%;
     > label {
