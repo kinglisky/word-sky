@@ -1,5 +1,5 @@
 export default {
-  SET_USER: function(state, data) {
+  SET_USER(state, data) {
     state.uname = data.uname;
     state.uid = data.uid;
   },
