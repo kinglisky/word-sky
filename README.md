@@ -1,27 +1,11 @@
-# word-sky-new
+# 简单的即时在线聊天室
 
-> A Vue.js project
+姑且算是我的毕业设计，发5天写的（真是赶鸭子上架，汗。。。。）
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+* 1 先把后台服务开起来 node app.js
+* 2 npm run dev
 
-# serve with hot reload at localhost:8080
-npm run dev
+就基本的几个功能：聊天、涂鸦、图片与弹幕
 
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](https://github.com/vuejs-templates/webpack#vue-webpack-boilerplate) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+基本环境用的webpack 搭建的，本着学习vue的目的做的，前端主要用的vue、vue-router、vuex，弹幕模块用的是[这个](https://github.com/jabbany/CommentCoreLibrary)。其他的图片与涂鸦实现还是很简单的。后台用的koa + Socket.io......
